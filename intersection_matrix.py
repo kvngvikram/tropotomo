@@ -21,8 +21,6 @@ from tomo_config import (
         # voxel space parameters
         min_lon, min_lat, x_points, y_points, z_points,
 
-        ray_cutoff_height,
-
         # index of ray that should be plotted and should stuff be plotted?
         plot_epoch_index, master_plot_flag,
 
@@ -30,7 +28,7 @@ from tomo_config import (
         initial_margin, initial_delta_margin, delta_margin_factor
         )
 
-plot_epoch_index = -1 if master_plot_flag else plot_epoch_index
+plot_epoch_index = plot_epoch_index if master_plot_flag else -1
 
 # --------------------------------------------------------
 # | data reading and assignement
@@ -640,8 +638,7 @@ if master_plot_flag:
     ax.set_xlabel('Longitude (m)', labelpad=20)
     ax.set_ylabel('Latitude (m)', labelpad=20)
     ax.set_zlabel('Geodetic height (m)', labelpad=20)
-    ax.set_title('Rays , Ray Cutoff Height =' +
-                 str(ray_cutoff_height/1000) + 'km')
+    ax.set_title('Rays')
 
     tmpx = x_points
     tmpy = y_points

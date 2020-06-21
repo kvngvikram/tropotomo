@@ -3,6 +3,7 @@ import numpy as np
 number_of_receivers = 20
 number_of_rays = 100
 
+# limits within which receiver locations will be randomly selected
 receiver_min_lon = 1.0  # in degrees
 receiver_max_lon = 1.1
 receiver_min_lat = 2.3
@@ -14,7 +15,7 @@ save_file_name = 'sample_input_data.txt'
 
 min_azimuth = 0  # deg
 max_azimuth = 360
-min_elevation = 80
+min_elevation = 30
 max_elevation = 90
 
 receiver_number_list = np.arange(number_of_receivers) + 1
